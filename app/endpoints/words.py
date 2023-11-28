@@ -1,14 +1,12 @@
 from fastapi import APIRouter
-from app.services.client import client
+from app.services.client import APIclient
 
 router = APIRouter()
 
-@router.get("/getRandom")
+@router.get("/get_random")
 def getRandom():
-    APIclient = client(baseURL="https://random-words5.p.rapidapi.com", apiKey="9ef31d92a4msh85731ca38c62a57p1e7318jsn7ecaa55b0256")
     return APIclient.RandomWord()
 
-@router.get("/getMultipleRandom")
+@router.get("/get_multiple_random")
 def getMultipleRandom():
-    APIclient = client(baseURL="https://random-words5.p.rapidapi.com", apiKey="9ef31d92a4msh85731ca38c62a57p1e7318jsn7ecaa55b0256")
     return APIclient.RandomWords()
