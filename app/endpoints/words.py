@@ -1,12 +1,14 @@
 from fastapi import APIRouter
-from app.services.client import words_client
+from app.services.words_client import words_client
+
 
 router = APIRouter()
 
 @router.get("/get_random")
-def getRandom():
-    return words_client.Random_word()
+def get_random():
+    return words_client.random_word()
+
 
 @router.get("/get_multiple_random")
-def getMultipleRandom():
-    return words_client.Random_words()
+def get_multiple_random():
+    return words_client.random_words()
